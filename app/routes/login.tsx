@@ -86,6 +86,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 // Second, we need to export an action function, here we will use the
 // `authenticator.authenticate method`
 export async function action({ request }: ActionFunctionArgs) {
+  //dont call req.formdata here when you will use authenticator
   return await authenticator.authenticate("auth", request, {
     successRedirect: "/dashboard",
     failureRedirect: "/login",
